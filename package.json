@@ -1,0 +1,22 @@
+{
+  "name": "agt-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "pm2 start index.js",
+    "stop": "pm2 stop 0",
+    "restart": "pm2 restart 0 --update-env",
+    "flush": "pm2 flush",
+    "kill": "pm2 kill"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "firebase": "^11.7.3",
+    "pm2": "^6.0.6"
+  }
+}

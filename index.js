@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, onValue, ref, remove } from 'firebase/database';
 import 'dotenv/config';
+import logger from './logger.js';
 
 const refPath = process.env['DB_REF'];
 const firebaseConfig = {
@@ -20,7 +21,7 @@ const dbRef = ref(db, refPath);
 console.log('\nScript Running\n');
 
 onValue(dbRef, snapshot => {
-  console.log('Item added');
-  console.log('Deleting data...\n');
+  logger.info('Item added');
+  logger.info('Deleting data...\n');
   remove(dbRef);
 });
